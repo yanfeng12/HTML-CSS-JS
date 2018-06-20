@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 30px;
+				background-color: green;
+				margin-bottom: 10px;
+				/*块级元素转成行内元素*/
+				display: inline;
+				display: none;
+			}
+			p{
+				background-color: red;
+				width: 100px;
+				height: 200px;
+			}
+			span{
+				/*行内元素不支持宽高*/
+				/*display: block;转换成块级元素支持宽高，但是会独占一行*/
+				/*display: inline-block; 转换成块级元素，支持宽高，可以在一行显示*/
+				display: inline-block;
+				height: 50px;
+				width: 300px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div>随便打几个字</div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<p>富强</p>
+		<p>民主</p>
+		<span>行内元素</span>
+
+	</body>
+</html>

@@ -1,0 +1,12 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/yanfeng/Documents/GitHub/HTML-CSS-JS/CSS/img/%e7%88%b1%e5%a5%87%e8%89%ba%e6%96%b0%e9%97%bb.png">
+  <Marks>
+    <LengthMark direction="12" color="16711680" length="180" x="5" y="315"/>
+    <LengthMark direction="3" color="16711680" length="103" x="54" y="160"/>
+    <LengthMark direction="12" color="16711680" length="193" x="-1" y="439"/>
+    <LengthMark direction="3" color="16711680" length="15" x="89" y="146"/>
+    <LengthMark direction="3" color="16711680" length="35" x="162" y="111"/>
+    <LengthMark direction="3" color="16711680" length="443" x="15" y="11"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="5" color="16711680" targetColor="15921906" offsetX="25" offsetY="10" x="147" y="293"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="5" color="16711680" targetColor="3355443" offsetX="25" offsetY="10" x="123" y="431"/>
+  </Marks>
+</MKM>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				/*把浏览器的默认margin设置为0*/
+				margin: 0;
+			}
+			.bbox{
+				width: 100px;
+				height: 100px;
+				background-color: gray;
+				/*margin-bottom: 10px;*/
+				/*盒子的居中，盒子必须设置宽高*/
+				/*margin: 10px(上下) auto（自动计算左右）;*/
+				margin: 10px auto;
+			}
+			/*margin的塌陷*/
+			/*如果设置了上下两个盒子的margin，两个盒子间距以大的那个margin为准*/
+			.bbox2{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bbox">
+			
+		</div>
+		<div class="bbox2">
+			
+		</div>
+	</body>
+</html>
