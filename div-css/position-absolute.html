@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				width: 600px;
+				height: 400px;
+				margin: 100px auto;
+				background-color: grey;
+				border: 1px solid grey;
+			}
+			.box2{
+				width: 400px;
+				height: 200px;
+				margin: 50px auto;
+				background-color: green;
+				position: relative;
+				left: 100px;
+			}
+			.box3{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--emmet
+			div.box1>div.box2>div.box3按住Tab键
+		-->
+		<div class="box1">
+			<div class="box2">
+				<div class="box3"></div>
+			</div>
+		</div>
+		
+	</body>
+</html>
