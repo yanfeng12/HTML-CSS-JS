@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a::after{
+				/*加冒号*/
+				content: "搜索";
+				color: red;
+			}
+			a::before{
+				content: "前面";
+				color: green;
+			}
+			.box{
+				width: 500px;
+				/*height: 500px;*/
+				margin: 10px auto;
+				border: 1px solid black;
+			}
+			.left{
+				background-color: red;
+				width: 100px;
+				height: 100px;
+				float: left;
+				border: 1px solid blue;
+			}
+			.right{
+				width: 100px;
+				height: 100px;
+				background-color: grey;
+				float: right;
+				border: 1px solid blue;
+			}
+			.clear{
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="https://www.baidu.com">百度你妹</a>
+		<div class="box">
+			<div class="left"></div>
+			<div class="right"></div>
+			<!--清除浮动-->
+			<div class="clear"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*input[name]{
+				border: 1px solid red;
+			}*/
+			/*^表示以什么开头的东西都会被选中*/
+			input[name^=p]{
+				border: 1px solid blue;
+			}
+			/*$表示以什么结尾的东西会被选中*/
+			input[name$=d]
+			{
+				border: 1px solid yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="" value="" />
+		<input type="text" name="username" id="username" value="" />
+		<input type="password" name="password" />
+	</body>
+</html>

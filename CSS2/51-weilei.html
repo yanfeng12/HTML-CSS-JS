@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*a链接没有被访问的时候的状态*/
+			a:link{
+				color: orange
+			}
+			/*a链接被访问过后的状态*/
+			a:visited{
+				color: black;
+			}
+			/*鼠标移入到a标签的时候的状态*/
+			a:hover{
+				color: green;
+			}
+			/*鼠标按下但是没有抬起的时候的状态*/
+			a:active{
+				color: yellow;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+				float: left;
+				width: 160px;
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+				background-color: black;
+				color: white;
+				border: 1px solid white;
+				/*margin-right: 10px;*/
+			}
+			#li1:hover{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="https://www.baidu.com">百度以下</a>
+		<ul>
+			<li id="li1">实战</li>
+			<li>实战</li>
+			<li>实战</li>
+		</ul>
+	</body>
+</html>
