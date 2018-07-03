@@ -1,0 +1,246 @@
+/*CSS样式重置：hhtml默认样式可能影响我们布局*/
+/*reset.css*/
+body,p,ul,li,input{
+	margin: 0;
+	padding: ;
+}
+li{
+	list-style: none;
+}
+/*下划线*/
+a{
+	text-decoration: none;
+}
+/*浮动*/
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+.clearfix{
+	/*这是针对于IE6的，因为IE6不支持:after伪类，这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/
+   *zoom: 1;
+   /*hasLayout*/
+}
+/*整段代码就相当于在浮动元素后面跟了个宽高为0的空div，然后设定它clear:both来达到清除浮动的效果。 */
+.clearfix:after{
+	/*内容为“.”就是一个英文的句号而已。也可以不写。 */
+      content:".";
+      /*元素转化为块元素*/
+      display:block;
+      height:0;
+      /*可见度设为隐藏。注意它和display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已； */
+      visibility:hidden;
+      /*-清除左右两边浮动。 */
+      clear:both;
+} 
+.header{
+	border-bottom: 1px solid #DCDCDC;
+	height: 60px;
+	/*最小宽度，如果浏览器小于960px，就会出现滚动条*/
+	min-width: 960px;
+}
+.header-left{
+	height: 60px;
+	width: 300px;
+	margin-left: 10px;
+	/*border: 1px solid red;*/
+}
+/*空格：后代选择器*/
+.header-left a,.header-left span{
+	/*让a和span里的文字消失*/
+	display: inline-block;
+	text-indent: -9999px;
+}
+.header-left a{
+	width: 170px;
+	height: 44px;
+	/*把所有小图标放到一个图片上：性能优化,减少请求次数*/
+	background: url(../img/download-all.gif) no-repeat;
+	background-position: -644px 0px;
+	margin-top: 10px;
+}
+.header-left span{
+	height: 38px;
+	width: 86px;
+	background: url(../img/download-all.gif) no-repeat;
+	background-position: -691px -47px;
+}
+.header-right{
+	/*height: 60px;*/
+	width: 300px;
+	/*border: 1px solid blue;*/
+	margin-right: 18px;
+	margin-top: 40px;
+	font-size: 12px;
+	color: #2974B6;
+}
+.header-right a{
+	color: #2974B6;
+}
+.header-right #firstMac{
+	color: #F8645C;
+}
+.download-menu{
+	/*height: 190px;*/
+	width: 1010px;
+	margin: 0px auto;
+}
+.download-menu span{
+	text-indent: -9999px;
+	display: block;
+}
+.tab-menu li{
+	height: 93px;
+	width: 161px;
+	float: left;
+	/*border: 1px solid red;*/
+	
+}
+.tab-menu li a{
+	display: block;
+	width: 161px;
+	height: 40px;
+	margin-top: 30px;
+	background: url(../img/download-all.gif) no-repeat;
+}
+/*能够选中tab-menu下的所有li中的第一个元素*/
+.tab-menu li:nth-of-type(1) a{
+	background-position: 8px -129px;
+}
+.tab-menu li:nth-of-type(1) a:hover{
+	background-position: 8px -185px;
+}
+.tab-menu li:nth-of-type(2) a{
+	background-position: -160px -129px;
+}
+.tab-menu li:nth-of-type(2) a:hover{
+	background-position: -160px -185px;
+}
+.tab-menu li:nth-of-type(3) a{
+	background-position: -346px -129px;
+}
+.tab-menu li:nth-of-type(3) a:hover{
+	background-position: -346px -185px;
+}
+.tab-menu li:nth-of-type(4) a{
+	background-position: -501px -129px;
+}
+.tab-menu li:nth-of-type(4) a:hover{
+	background-position: -501px -185px;
+}
+.tab-menu li:nth-of-type(5) a{
+	background-position: -631px -129px;
+}
+.tab-menu li:nth-of-type(5) a:hover{
+	background-position: -631px -185px;
+}
+.tab-menu li:nth-of-type(6) a{
+	background-position: -780px -185px;
+}
+#download-info{
+	height: 439px;
+	width: 100%;
+	margin: 0 auto;
+	background: url(../img/download_bg.png) repeat-x;
+	
+}
+#download-info-content
+{
+	width: 960px;
+	height: 439px;
+	background: url(../img/mac.jpg) no-repeat 0 0;
+	margin: 0 auto;
+	position: relative;
+}
+#download-info-text{
+	width: 275px;
+	height: 146px;
+	position: absolute;
+	left: 589px;
+	top: 197px;
+}
+#download-info-text p{
+	color: white;
+	font-size: 12px;
+	line-height: 22px;
+}
+#download-info-text a{
+	display: block;
+	width: 187px;
+	height: 59px;
+	text-indent: -9999px;
+	margin-top: 10px;
+	background: url(../img/download-all.gif) no-repeat -694px -294px;
+}
+#download-method{
+	border-bottom: 1px solid #f0f0f0;
+}
+.download-method-content{
+	margin-bottom: 20px;
+	/*border-bottom: 1px solid grey;*/
+	width: 960px;
+	height: 200px;
+	margin: 0 auto;
+}
+.download-method-content-left
+{
+	width: 535px;
+	margin-left: 40px;
+}
+.download-method-content-left input,.download-method-content-left img,.download-method-content-left button{
+	/*垂直居中对齐*/
+	vertical-align: middle;
+	height: 32px;
+}
+.download-method-content-left p{
+	font-size: 20px;
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+.download-method-content-left input:nth-of-type(1){
+	width: 190px;
+	/*height: 32px;*/
+	margin-right: 10px;
+}
+.download-method-content-left input:nth-of-type(2){
+	width: 130px;
+	/*height: 32px;*/
+}
+.download-method-content-left button{
+	width: 80px;
+	background-color: #5197FF;
+	color: white;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+}
+.download-method-content-right{
+	margin-top: 60px;
+	margin-right: 50px;
+}
+.download-method-content-right p:nth-of-type(1){
+	font-size: 20px;
+}
+.download-method-content-right p:nth-of-type(2){
+	font-size: 12px;
+}
+.code-left{
+	width: 160px;
+	margin-left: 56px;
+}
+.code-left p:nth-of-type(1){
+	font-size: 20px;
+}
+.code-left p:nth-of-type(2){
+	font-size: 12px;
+}
+#footer{
+	text-align: center;
+}
+#footer a{
+	font-size: 12px;
+	color: #666666;
+	
+}

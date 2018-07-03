@@ -1,0 +1,41 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/yanfeng/Documents/GitHub/HTML-CSS-JS/Div-CSSExample/img/pan.baidu%402x.png">
+  <Marks>
+    <LengthMark direction="12" color="16711680" length="960" x="164" y="778"/>
+    <LengthMark direction="12" color="16711680" length="960" x="151" y="154"/>
+    <LengthMark direction="3" color="16711680" length="60" x="868" y="0"/>
+    <LengthMark direction="3" color="16711680" length="439" x="1125" y="154"/>
+    <LengthMark direction="3" color="16711680" length="200" x="962" y="593"/>
+    <LengthMark direction="3" color="16711680" length="32" x="281" y="678"/>
+    <LengthMark direction="12" color="16711680" length="188" x="201" y="689"/>
+    <LengthMark direction="12" color="16711680" length="18" x="389" y="705"/>
+    <LengthMark direction="12" color="16711680" length="110" x="408" y="699"/>
+    <LengthMark direction="12" color="16711680" length="100" x="635" y="693"/>
+    <LengthMark direction="3" color="16711680" length="32" x="724" y="677"/>
+    <LengthMark direction="3" color="16711680" length="20" x="228" y="637"/>
+    <LengthMark direction="3" color="16711680" length="14" x="804" y="680"/>
+    <LengthMark direction="3" color="16711680" length="14" x="786" y="838"/>
+    <LengthMark direction="3" color="16711680" length="14" x="718" y="361"/>
+    <LengthMark direction="3" color="16711680" length="10" x="855" y="372"/>
+    <LengthMark direction="3" color="16711680" length="59" x="771" y="428"/>
+    <LengthMark direction="12" color="16711680" length="187" x="710" y="448"/>
+    <LengthMark direction="3" color="16711680" length="40" x="1020" y="1"/>
+    <LengthMark direction="12" color="16711680" length="161" x="325" y="67"/>
+    <LengthMark direction="3" color="16711680" length="93" x="535" y="61"/>
+    <LengthMark direction="3" color="16711680" length="44" x="31" y="8"/>
+    <LengthMark direction="12" color="16711680" length="170" x="5" y="20"/>
+    <LengthMark direction="3" color="16711680" length="38" x="225" y="13"/>
+    <LengthMark direction="12" color="16711680" length="86" x="175" y="49"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="0" color="16711680" targetColor="5921370" offsetX="25" offsetY="10" x="286" y="60"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="0" color="16711680" targetColor="16777215" offsetX="25" offsetY="10" x="1251" y="44"/>
+    <ColorMark defaultDirection="10" colorSystem="hex" direction="0" color="16711680" targetColor="16777215" offsetX="27" offsetY="27" x="974" y="45"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="0" color="16711680" targetColor="16777215" offsetX="25" offsetY="10" x="641" y="85"/>
+    <LengthMark direction="12" color="16711680" length="275" x="709" y="404"/>
+    <LengthMark direction="3" color="16711680" length="146" x="921" y="358"/>
+    <LengthMark direction="3" color="16711680" length="190" x="937" y="155"/>
+    <LengthMark direction="3" color="16711680" length="20" x="438" y="658"/>
+    <LengthMark direction="3" color="16711680" length="20" x="409" y="591"/>
+    <LengthMark direction="3" color="16711680" length="190" x="1291" y="121"/>
+    <LengthMark direction="12" color="16711680" length="222" x="816" y="1404"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="9" color="16711680" targetColor="5347327" offsetX="25" offsetY="10" x="1298" y="1377"/>
+  </Marks>
+</MKM>
