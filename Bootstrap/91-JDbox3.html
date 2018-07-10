@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/simplecss.css"/>
+		<style type="text/css">
+			.box{
+				border: 1px solid red;
+				height: 150px;
+			}
+			.box2{
+				height: 100px;
+				background-color: black;
+			}
+			.box .left{
+				height: 100px;
+				background-color: green;
+			}
+			.box .right{
+				height: 100px;
+				background-color: orange;
+			}
+			.clearfix:after{
+				display: block;
+				visibility: hidden;
+				clear: both;
+				height: 0;
+				content: ".";
+			}
+			.clearfix{
+				zoom: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container box">
+			<div class="row">
+				<div class="col-md-8 left">
+					<div class="box2">
+						
+					</div>
+				</div>
+				<div class="col-md-4 right"></div>
+			</div>
+		</div>
+	</body>
+</html>

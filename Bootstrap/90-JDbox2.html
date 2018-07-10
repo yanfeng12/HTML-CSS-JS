@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/simplecss.css"/>
+		<style type="text/css">
+			.box{
+				height: 300px;
+				border: 1px solid orange;
+			}
+			.title{
+				height: 50px;
+				background-color: grey;
+			}
+			.content{
+				height: 250px;
+				border: 1px solid black;
+			}
+			.clearfix:after{
+				display: block;
+				visibility: hidden;
+				clear: both;
+				height: 0;
+				content: ".";
+			}
+			.clearfix{
+				zoom: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container clearfix">
+			<div class="row">
+				<div class="col-md-4 box">
+					<div class="title">
+						发现好货
+					</div>
+					<div class="content">
+						
+					</div>
+				</div>
+				<div class="col-md-4 box">
+					<div class="title">
+						发现好货
+					</div>
+					<div class="content">
+						
+					</div>
+				</div>
+				<div class="col-md-4 box">
+					<div class="title">
+						发现好货
+					</div>
+					<div class="content">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

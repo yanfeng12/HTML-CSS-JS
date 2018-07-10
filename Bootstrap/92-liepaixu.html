@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/simplecss.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<style type="text/css">
+			.box1,.box2,.box3{
+				height: 100px;
+				
+			}
+			.header{
+				border: 1px solid black;
+			}
+			.box1{
+				background-color: orange;
+			}
+			.box2{
+				background-color: blue;
+			}
+			.box3{
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container header">
+			<div class="row">
+				<!--让三个div可以随意交换位置-->
+				<div class="col-md-4 box1 col-md-push-4"></div>
+				<div class="col-md-4 box2 col-md-pull-4"></div>
+				<div class="col-md-4 box3"></div>
+			</div>
+		</div>
+	</body>
+</html>
