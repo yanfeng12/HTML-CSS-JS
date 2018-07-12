@@ -415,3 +415,42 @@ template {
 	/*占十二格*/
 	width: 100%;
 }
+/*按钮类*/
+.btn{
+	border: 1px solid #CCC;
+	padding: 6px 12px;
+	border-radius: 4px;
+}
+.btn-default{
+	color: #333;
+	background-color: #fff;
+}
+.btn-default:hover{
+	color: #333;
+	background-color: #ccc;
+}
+/*首选项*/
+.btn-primary{
+	background-color: #377BB5;
+	color: #fff;
+}
+.btn-primary:hover{
+	background-color: #2B618E;
+	color: #fff;
+}
+/*一般信息*/
+.btn-info{
+	
+}
+/*成功信息*/
+.btn-success{
+	
+}
+/*警告信息*/
+.btn-warning{
+	
+}
+/*危险信息*/
+.btn-danger{
+	
+}

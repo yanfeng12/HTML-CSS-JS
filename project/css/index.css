@@ -1,0 +1,42 @@
+.container{
+	width: 1000px;
+}
+.header-top-content p,.header-top-content a{
+	display: inline-block;
+}
+.header-top{
+	border-bottom: 1px solid #E5E5E5;
+	height: 28px;
+	line-height: 28px;
+}
+.header-top-content{
+	font-size: 12px;
+	color: #a1a1a1;
+}
+.header-top-content .top-right{
+	text-align: right;
+}
+.header-top-content .top-right a{
+	color: #A1A1A1;
+}
+.header-top-content span{
+	color: #da0000;
+}
+.header-content .logo img{
+	margin-top: 22px;
+}
+.header-content .nav{
+	margin-top: 33px;
+	padding-left: 184px;
+}
+.header-content .nav a{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 22px 18px;
+	/*默认产生间隙*/
+	display: inline-block;
+	margin-left: -6px;
+}
+.header-content .nav .active{
+	border-bottom: 5px solid #d90000;
+}
