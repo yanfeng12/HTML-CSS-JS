@@ -9,3 +9,6 @@ HTML-CSS-JS零基础入门
 
 # 课程表
 [syllabus](https://yanfeng12.github.io/HTML-CSS-JS/table/72-syllabus.html)
+
+# 大宗商品交易网站
+[project](https://yanfeng12.github.io/HTML-CSS-JS/project/index.html)
