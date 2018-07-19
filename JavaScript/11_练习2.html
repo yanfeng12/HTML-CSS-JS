@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				text-align: center;
+				padding-top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="p1" style="font-size: 20px;">第一行文字</p>
+		<p id="p2">第二行文字</p>
+		<button id="plus">+</button>
+		<button id="minus">_</button>
+		<script type="text/javascript">
+			var txt1 = document.getElementById("p1")
+			var txt2 = document.getElementById("p2")
+			var btn1 = document.getElementById("plus")
+			var btn2 = document.getElementById("minus")
+			var newfontsize = 20
+			btn1.onclick = function fn1 () {
+//				txt1.style.fontSize = txt1.style.fontSize+Number(2)
+            newfontsize = newfontsize+2
+            txt1.style.fontSize = newfontsize+"px"
+			}
+			btn2.onclick = function fn2 () {
+				newfontsize = newfontsize-2
+				txt1.style.fontSize = newfontsize+"px"
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+				padding-top: 100px;
+			}
+			#result{
+				border: 1px solid #ccc;
+				width: 50%;
+				height: 100px;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="txt1" value="" />
+		<input type="text" id="txt2" value="" />
+		<div id="result">
+			答案
+		</div>
+		<button id="btn">
+			求和
+		</button>
+		<script type="text/javascript">
+			var ipt1 = document.getElementById("txt1")
+			var ipt2 = document.getElementById("txt2")
+			var div1 = document.getElementById("result")
+			var btn1 = document.getElementById("btn")
+			btn1.onclick = function fn () {
+				var a = ipt1.value
+				var b = ipt2.value
+				var sum = Number(a)+Number(b)
+//				var sum = ipt1.value + ipt2.value
+				div1.innerHTML = sum
+			}
+		</script>
+	</body>
+</html>

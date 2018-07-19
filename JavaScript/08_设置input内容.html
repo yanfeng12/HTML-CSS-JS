@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--点击按钮获取输入框内容-->
+		<input type="text" id="ipt" value="" />
+		<button id="btn">按钮</button>
+		<script type="text/javascript">
+			var btn1 = document.getElementById("btn")
+			var input1 = document.getElementById('ipt')
+			btn1.onclick = function fn () {
+				console.log(input1.value)
+			}
+		</script>
+	</body>
+</html>

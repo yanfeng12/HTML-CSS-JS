@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="">
+			<button id="btn">按钮</button>
+		</div>
+		<script type="text/javascript">
+			//实现点击按钮，弹出alert
+			//弹出alert的函数
+			function btnClick () {
+				alert("点击按钮")
+			}
+			//找到元素
+			var bb=document.getElementById("btn")
+			//btnClick一定不要加括号,加括号表示立即调用
+			bb.onclick = btnClick
+		</script>
+	</body>
+</html>

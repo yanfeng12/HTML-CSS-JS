@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			输入框输入一个三位数，点击按钮，获取个位
+		-->
+		<input type="text" id="ipt" value="" />
+		<button id="btn">按钮</button>
+		<div id="result">
+			
+		</div>
+		<script type="text/javascript">
+			var ipt1 = document.getElementById("ipt")
+			var btn1 = document.getElementById("btn")
+			var div1 = document.getElementById("result")
+			btn1.onclick = function fn () {
+				
+				var a = Number(ipt1.value) % 100
+				var b = a%10
+				alert(b)
+			}
+		</script>
+	</body>
+</html>

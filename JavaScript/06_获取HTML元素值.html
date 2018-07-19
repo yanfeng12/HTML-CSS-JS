@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">hello world</div>
+		<button id="btn">按钮</button>
+		<script type="text/javascript">
+			function fn () {
+				var div1 = document.getElementById("box") 
+				//innerHTML在JS是双向功能：获取对象的内容 或 向对象插入内容；
+				alert(div1.innerHTML)
+				document.getElementById("box").innerHTML = "插入内容"
+			}
+			var btn1 = document.getElementById("btn")
+			btn1.onclick = fn
+		</script>
+	</body>
+</html>

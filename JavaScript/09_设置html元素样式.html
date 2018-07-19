@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--点击按钮改变背景颜色-->
+		<div id="box" style="background-color: red;height: 100px;width: 100px;">
+			不要买小米手机
+		</div>
+		<button id="btn">点击换颜色</button>
+		<!--
+			CSS复合样式：background-color
+			JS:backgroundColor ,去掉中间的-，后面的单词首字母大写
+		-->
+		<script type="text/javascript">
+			var btn1 = document.getElementById("btn")
+			var div1 = document.getElementById("box")
+			btn1.onclick = function fn () {
+				div1.style.backgroundColor = "green"
+				div1.style.fontSize = '18px'
+			}
+		</script>
+	</body>
+</html>
