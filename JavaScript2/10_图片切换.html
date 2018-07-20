@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				margin: 50px auto;
+				width: 1000px;
+				height: 300px;
+			}
+			#container #box1{
+				width: 1000px;
+				height: 50px;
+				background-color: black;
+				text-align: center;
+				line-height: 50px;
+			}
+			#container #box1 button{
+				background-color: red;
+				color: white;
+				border: none;
+			}
+			#container #box2 img{
+				width: 1000px;
+				height: 250px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="box1">
+				<button id="btn1">上一张</button>
+				<button id="btn2">下一张</button>
+			</div>
+			<div id="box2">
+				<img src="img/01.jpg" id="tu"/>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var obtn1 = document.getElementById("btn1")
+			var obtn2 = document.getElementById("btn2")
+			var oimg = document.getElementById("tu")
+			var num = 01
+			obtn1.onclick = function fn1 () {
+				if (num==1) {
+					
+				} else{
+					num--
+				}
+				oimg.src = "img/0"+num+".jpg"
+			}
+			obtn2.onclick = function fn2 () {
+				if (num==7) {
+					
+				} else{
+					num++
+				}
+				oimg.src = "img/0"+num+".jpg"
+			}
+		</script>
+	</body>
+</html>

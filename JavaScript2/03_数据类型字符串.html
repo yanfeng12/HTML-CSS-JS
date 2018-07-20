@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<!--<span style="color: red;">哈哈哈哈哈</span>-->
+		</div>
+		<script type="text/javascript">
+			var url = "www.baidu.com"
+			//单引号和双引号同时使用 需要嵌套
+			//变量和字符串一起使用的时候 用 + 连接
+			var str1 = '<span style="color: red;">哈哈哈哈哈'+url+'</span>'
+			var div1 = document.getElementById("box")
+			alert(str1.length)
+			div1.innerHTML = str1
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				display: none;
+				margin: 20px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			点击按钮隐藏div
+		-->
+		<button id="btn">按钮</button>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var btn1 = document.getElementById("btn")
+			var div1 = document.getElementById("box")
+			btn1.onclick = function fn () {
+				if (div1.style.display == "block") {
+					div1.style.display = "none" 
+				} else{
+					div1.style.display = "block"
+				}
+			}
+		</script>
+	</body>
+</html>

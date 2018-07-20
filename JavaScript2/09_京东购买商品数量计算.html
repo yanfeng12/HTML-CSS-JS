@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="-" />
+		<input type="text" id="num" value="1" />
+		<input type="button" id="btn2" value="+" />
+		<script type="text/javascript">
+			var obtn1 = document.getElementById("btn1")
+			var obtn2 = document.getElementById("btn2")
+			var txt = document.getElementById("num")
+			btn1.onclick = function fn1 () {
+				if (txt.value>0) {
+					txt.value--
+				}
+			}
+			btn2.onclick = function fn2 () {
+				txt.value++
+			}
+		</script>
+	</body>
+</html>
