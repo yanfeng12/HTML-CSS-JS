@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<style type="text/css">
+			input{
+				margin-top: 100px;
+				/*强制提高优先级*/
+				width: 100px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="ipt" value="" class="form-control"/>
+		<button class="btn btn-danger" id="btn">按钮</button>
+		<script type="text/javascript">
+			var obtn = document.getElementById("btn")
+			var oipt = document.getElementById("ipt")
+			//实现分数判断 60-69 70-79 80-89 90-99
+			obtn.onclick = function fn () {
+				var num = Number(oipt.value)
+				console.log(num)
+//				var intvalue = parseInt(num/10)
+//				switch (intvalue){
+//					case (6):
+//					alert("60-69")
+//						break;
+//					case (7):
+//					alert("70-79")
+//						break;
+//					case (8):
+//					alert("80-89")
+//						break;
+//					case (9):
+//					alert("90-99")
+//						break;
+//					default:
+//						break;
+//				}
+                switch (true){
+                	case (num>=60&num<70):
+                	alert("及格")
+                		break;
+                	case (num>=70&&num<80):
+                	alert("中等")
+                	     break;
+                	case (num>=80&&num<90):
+                	alert("良好")
+                	     break;
+                	case(num>=90):
+                	alert("优秀")
+                	     break;
+                	default:
+                		break;
+                }
+			}
+		</script>
+	</body>
+</html>

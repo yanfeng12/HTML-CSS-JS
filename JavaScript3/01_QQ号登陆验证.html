@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<style type="text/css">
+			#wrap{
+				width: 400px;
+				margin-top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			1.QQ号长度：5-11位
+			2.QQ号是数字   123456a Number->NaN
+			3.密码：6-16位
+			4.正确QQ号：1234567，正确密码：12345678a
+		-->
+		<div class="container form-horizontal" id="wrap">
+			<!--QQ号-->
+			<div class="form-group">
+				<div class="col-md-3">
+					<label class="control-label">QQ号：</label>
+				</div>
+				<div class="col-md-9">
+					<input type="text" id="qqIpt" value="" class="form-control" />
+				</div>
+			</div>
+			<!--密码-->
+			<div class="form-group">
+				<div class="col-md-3">
+					<label class="control-label">密码：</label>
+				</div>
+				<div class="col-md-9">
+					<input type="password" id="pwIpt" value="" class="form-control" />
+				</div>
+			</div>
+			<!--登录按钮-->
+			<div class="form-group">
+				<button class="btn btn-danger col-md-offset-4" id="load">登陆</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var qqcode = document.getElementById("qqIpt")
+//			console.log(qqcode)
+//			console.log(qqcode.value)
+			var pwcode = document.getElementById("pwIpt")
+			var obtn = document.getElementById("load")
+			//初始时值为0，需要点击按钮后再获取
+//			var qqNum = Number(qqcode.value)
+//			var pwNum = Number(pwcode.value)
+//			console.log(qqNum)
+			obtn.onclick = function loadFn () {
+				var qqNum = Number(qqcode.value) 
+				var pwNum = Number(pwcode.value) 
+				console.log(typeof qqNum) 
+				console.log(qqNum)
+				if (qqcode.value.length<5 || qqcode.value.length>11) {
+					alert("QQ号长度不正确")
+				} else if(qqNum == "NaN"){
+					alert("QQ号格式不正确")
+				} else if(pwcode.value.length<6 || pwcode.value.length>16){
+					alert("密码长度不正确")
+				} else if(qqcode.value=="1234567" && pwcode.value=="12345678a"){
+					alert("登陆成功")
+				}else{
+					alert("QQ号或者密码不正确")
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<style type="text/css">
+			.wrap{
+				margin: 100px auto;
+				/*border: 1px solid red;*/
+				width: 500px;
+				text-align: center;
+			}
+			.wrap input{
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<button class="btn btn-danger" id="btn1">全选</button>
+			<button class="btn btn-default" id="btn2">反选</button>
+			<br />
+			<br />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+		</div>
+		<script type="text/javascript">
+			var obtn1 = document.getElementById("btn1")
+			var obtn2 = document.getElementById("btn2")
+			//查找元素的第二种方法，通过标签查找元素
+			var oinput = document.getElementsByTagName("input")
+			console.log(typeof oinput)
+			obtn1.onclick = function allBtn () {
+				for (var i=0;i<oinput.length;i++) {
+					oinput[i].checked = true
+				}
+			}
+			obtn2.onclick = function noneBtn () {
+				for (var i=0;i<oinput.length;i++) {
+					oinput[i].checked = false
+				}
+			}
+		</script>
+	</body>
+</html>
