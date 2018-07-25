@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			alert(a)
+			var a =1
+			alert(a)
+			function a () {
+				alert("aa")
+			}
+			function a () {
+				alert("aaa")
+			}
+			//报错：a is not a function
+			//a=1  1()
+			a()
+			//规则：1.如果变量和函数同名，保留函数
+			//2 什么时候会改变仓库里面变量的值  = + - % * ++ -- ...
+			//3 如果函数同名 保留后者
+		</script>
+	</body>
+</html>

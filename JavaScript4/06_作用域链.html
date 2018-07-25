@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 10
+			function fn1 () {
+				alert(a)
+				var a = 20
+//              a = 20
+			}
+			fn1()
+			alert(a)
+			//1.先找东西。
+//			a ------------ undefined
+//          fn-------------------function fn1(){}
+            //2.逐行执行代码
+            //a=10 (var 改掉仓库中a)
+            //执行fn1()  又是一个作用域
+                         //1.先找东西
+                         //a------(有var)---undefined
+                         //2.逐行执行代码
+//					          alert(a)    undefined
+//					          a = 20     把函数外面的a 改成20
+//			        alert(a)  20
+		</script>
+	</body>
+</html>
