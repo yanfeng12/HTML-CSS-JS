@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="get">
+			<span id="spn">商品单价：198</span>
+			商品数量：<input type="text" value="1" id="ipt1"/>
+			总价：<input type="text" value="198" id="ipt2" />
+			<button>提交</button>
+		</form>
+		<script type="text/javascript">
+			var oIpt1 = document.getElementById("ipt1")
+			var oIpt2 = document.getElementById("ipt2")
+			oIpt1.onchange = function  () {
+				oIpt2.value = oIpt1.value*198
+			}
+		</script>
+	</body>
+</html>

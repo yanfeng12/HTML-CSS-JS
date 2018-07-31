@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 600px;
+				height: 400px;
+				background-color: green;
+				margin: 0 auto;
+			}
+			#box2{
+				width: 300px;
+				height: 200px;
+				background-color: orange;
+				margin: 100px auto;
+			}
+			#box3{
+				width: 150px;
+				height: 100px;
+				background-color: blue;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			box1
+			<div id="box2">
+				box2
+				<div id="box3">
+					box3
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var oBox1 = document.getElementById("box1")
+			var oBox2 = document.getElementById("box2")
+			var oBox3 = document.getElementById("box3")
+			function fn1 (ev) {
+				//this在函数内部，指向调用他的那个对象，通常如果函数前面没有对象调用，基本上都指向window
+				alert(this.id)
+//				var ev = ev || event
+//				ev.stopPropagation()
+                stopEvent(ev)
+			}
+//			oBox1.onclick = fn1()加括号会直接执行
+			oBox1.onclick = fn1
+			oBox2.onclick = fn1
+			oBox3.onclick = fn1
+			function stopEvent (ev) {
+				var ev = ev || event
+				if (ev && ev.stopPropagation) {
+					ev.stopPropagation()
+				} else if(window.event){
+					window.event.cancelBubble = true
+				}
+			}
+		</script>
+	</body>
+</html>

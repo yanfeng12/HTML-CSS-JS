@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.onkeydown = function  () {
+				console.log("键盘按下了")
+			}
+			document.onkeyup = function  (ev) {
+				console.log("键盘抬起了")
+				//event:表示的是事件对象，当事件发生时，用来记录事件相关信息
+				//行车记录仪
+				//keyCode记录当前按的是哪个键，其实就是键盘码
+				console.log(ev.keyCode)
+				if (ev.keyCode===13) {
+					//按的回车键
+					alert("马上搜索")
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--添加元素-->
+		<input type="text" id="ipt" value="" />
+		<button id="btn">按钮</button>
+		<ul>
+			<li>蒋中正</li>
+			<li>李德邻</li>
+			<li>李德胜</li>
+			<li>戴雨农</li>
+		</ul>
+		<script type="text/javascript">
+			var oIpt = document.getElementById("ipt")
+			var oBtn = document.getElementById("btn")
+			var oUl = document.getElementsByTagName("ul")[0]
+			oBtn.onclick = function  () {
+				var value = oIpt.value
+				//创建元素
+				var oLi = document.createElement("li")
+				//添加内容
+				oLi.innerHTML = value
+				//把li放到ul里
+				oUl.appendChild(oLi)
+			}
+			var allLi = document.getElementsByTagName("li")
+			for (var i=0,len=allLi.length;i<len;i++) {
+				allLi[i].onclick = function  () {
+					this.style.color = "red"
+				}
+			}
+			//带来的问题：新添加的不能改变颜色
+			
+		</script>
+	</body>
+</html>

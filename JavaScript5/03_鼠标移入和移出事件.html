@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{
+				/*去掉下划线*/
+				text-decoration: none;
+				padding: 20px;
+				color: #000000;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="">课堂</a>
+		<a href="">实战</a>
+		<a href="">课程</a>
+		<a href="">社区</a>
+		<script type="text/javascript">
+			var oA = document.getElementsByTagName("a")
+			for (var i=0,len=oA.length;i<len;i++) {
+				//当鼠标移入时触发
+				oA[i].onmouseover = function  () {
+					//改变背景颜色，怎么确定移入的是谁？
+					//this   1.在函数中2.谁调用它，就指向谁
+					//this 
+					console.log(this)
+					this.style.backgroundColor = "red"
+					this.style.color="white"
+//					oA[i].style.backgroundColor="red"
+				}
+				//当鼠标移出时触发
+				oA[i].onmouseout = function  () {
+					this.style.backgroundColor = "white"
+					this.style.color = "black"
+				}
+			}
+		</script>
+	</body>
+</html>

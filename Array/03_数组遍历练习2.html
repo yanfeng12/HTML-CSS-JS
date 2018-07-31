@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			设计一个求最大值功能的函数
+			传入一个数组，求出最大值
+		-->
+		<script type="text/javascript">
+			function maxx (arr) {
+				var a = 0
+				for (var i=0,len=arr.length;i<len;i++) {
+					if (a<=arr[i]) {
+						a = arr[i]
+					} else{
+						
+					}
+				}
+				return a
+			}
+			var arr1 = [11,22,33,44,55,66,77,-88]
+			var b = maxx(arr1)
+			console.log("最大值：",b)
+		</script>
+	</body>
+</html>

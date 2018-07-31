@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,2,3,4,5,6]
+//			for (var i = 0; i < arr.length; i++) {
+//				console.log(arr[i])
+//			}
+			//查询某个元素，变量名【索引值】
+//			console.log(arr[0])
+			//增加一个元素
+			arr[6] = 7
+			//再默认加一个元素
+			arr[arr.length] = 8
+			//删除元素 数组长度不变
+			delete arr[7]
+			//修改数组的元素
+			arr[1] = 9
+			
+			console.log(arr)
+			
+			//先把长度求出来，循环中只会求一次长度，推荐使用
+			var arr2 = [11,22,33,44,55,66,77,88,99]
+			for (var i=0,len = arr2.length;i<len;i++) {
+				console.log(arr2[i])
+			}
+			// for in
+			for (var i in arr2) {
+				// for in中i是字符串类型
+				console.log(arr2[i])
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<script type="text/javascript">
+			var oBtn = document.getElementsByTagName("button")
+			console.log(oBtn)
+			//集合
+			oBtn[0].ondblclick = function  () {
+				//鼠标双击
+				alert("鼠标双击")
+			}
+			//鼠标移动
+			document.onmousemove = function  () {
+				console.log("鼠标移动")
+			}
+			//鼠标右键
+			document.oncontextmenu = function  () {
+				alert("右键菜单")
+				//禁止原生的右键菜单
+				return false;
+			}
+		</script>
+	</body>
+</html>

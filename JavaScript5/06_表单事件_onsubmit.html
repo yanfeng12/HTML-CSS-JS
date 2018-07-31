@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<form action="" method="post">
+			
+			<input type="submit" value=""/>
+		</form>-->
+		<form action="https://www.baidu.com/s" method="get">
+			
+			<input type="text" value="" id="ipt" name="wd"/>
+			<button>提交</button>
+		</form>
+		<script type="text/javascript">
+			var oForm = document.getElementsByTagName("form")
+			var oIpt = document.getElementById("ipt")
+			oForm[0].onsubmit = function function_name () {
+				//验证
+				var iptValue = oIpt.value
+				if (iptValue==="") {
+					alert("需要输入用户名")
+					return false;
+				}
+				//return false可以阻止表单提交
+				return true;
+			}
+		</script>
+	</body>
+</html>

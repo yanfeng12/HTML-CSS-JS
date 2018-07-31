@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<button id="btn">按钮</button>
+		<input type="text" id="" value="" class="ipt"/>
+		<script type="text/javascript">
+			//id
+			var obox = document.getElementById("box")
+			//标签
+			var oli = document.getElementsByTagName("li")
+			//类名
+			var oipt = document.getElementsByClassName("ipt")
+			var obtn = document.getElementById("btn")
+			obtn.onclick = function  () {
+				for (var i=0,len=oli.length;i<len;i++) {
+					oli[i].innerHTML = i
+				}
+			}
+		</script>
+	</body>
+</html>

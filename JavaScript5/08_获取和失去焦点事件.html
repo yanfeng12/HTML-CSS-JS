@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="http://www.baidu.com/s" id="form1" >
+			
+			<input type="text" value="请输入搜索内容" id="ipt" name="wd"/>
+		</form>
+		<script type="text/javascript">
+			var oIpt = document.getElementById("ipt")
+			var oForm = document.getElementById("form1")
+			//获取焦点，光标闪动
+			oIpt.onfocus = function  () {
+				oIpt.value = ""
+			}
+			//失去焦点
+			oIpt.onblur = function  () {
+				if (oIpt.value=="") {
+					oIpt.value = "请输入搜索内容"
+				} else{
+					
+				}
+				
+			}
+			//要求：用户没有输入内容时，不能提交
+			oForm.onsubmit = function  () {
+				if (oIpt.value == "") {
+					alert("内容不能为空")
+					return false;
+				} else{
+					return true;
+				}
+			}
+			
+		</script>
+	</body>
+</html>
