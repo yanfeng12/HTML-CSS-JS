@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str1 = "李德临"
+			//var str1 = new string("李德临")
+			//1.charAt方法
+			//charAt用来取代某个字符
+			var str2 = "#box"
+			console.log(str2.charAt(0))
+			if(str2.charAt(0) == "#")
+			{
+				
+			}else{
+				
+			}
+			//2.indexOf
+			//indexOf判断某个字符是否在字符串中
+			//如果在，返回第一次出现的位置;如果不在，返回-1
+			var str3 = "cnode@sina.com"
+			console.log(str3.indexOf("@"))
+			if (str3.indexOf("@") != -1) {
+				
+			} else{
+				
+			}
+			//lastindexOf 从后向前
+			//3.replace字符串替换
+			var str4 = "acsdfcgc"
+			var str5 = str4.replace("c","xxxx")
+			//g表示全局替换
+			var str6 = str4.replace(/c/g,"dddd")
+			console.log(str5)
+			console.log(str6)
+			//4.substr 字符串截取
+			var str7 = "cnode@sina.com"
+			console.log(str7.substr(3))
+		</script>
+	</body>
+</html>

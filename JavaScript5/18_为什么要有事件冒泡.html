@@ -34,6 +34,14 @@
 				}
 			}
 			//带来的问题：新添加的不能改变颜色
+			//原因：先执行循环，后添加元素
+			//解决：事件冒泡
+			oUl.onclick = function  (ev) {
+				var ev = ev || event
+				//ev.target事件源
+				console.log(ev.target)
+				ev.target.style.color = "red"
+			}
 			
 		</script>
 	</body>

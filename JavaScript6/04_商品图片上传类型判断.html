@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="title">
+				商品图片上传类型判断
+			</div>
+			<div class="content">
+				<img src="img/02.jpg"/>
+			</div>
+			<div class="footer">
+				<div id="">
+					选择商品图片
+				</div>
+				<input type="file" name="btn" id="btn" value="" />
+				
+			</div>
+		</div>
+		<!--
+			需求：点击图片上传按钮，判断上传的文件是否符合上传的类型
+		-->
+		<script type="text/javascript">
+			var oFile = document.getElementById("btn")
+			oFile.onchange = function  () {
+				//C:\fakepath\1530165541.png
+				//1.需要一个判断的标准，那些是允许上传的。jpg/png
+				//2.拿到文件的后缀
+				console.log(this.value)
+				//获取路径
+				var fileValue = this.value
+				//截取
+				var fileType = fileValue.substr(fileValue.lastIndexOf("."))
+				console.log(fileType)
+				if (checkType(fileType)) {
+					alert("格式正确")
+				} else{
+					alert("格式不正确")
+				}
+			}
+			function checkType (fileType) {
+				var allowType = [".png",".jpg","gif","bmp"]
+				for (var i in allowType) {
+					if (allowType[i] === fileType) {
+						return true;
+					} else{
+						
+					}
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>
