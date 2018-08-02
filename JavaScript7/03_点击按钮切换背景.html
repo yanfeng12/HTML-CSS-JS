@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="start">切换图片</button>
+		<button id="stop">停止</button>
+		<img src="" id="tupian"/>
+		<script type="text/javascript">
+			var startBtn = document.getElementById("start")
+			var stopBtn = document.getElementById("stop")
+			var timer = null
+			startBtn.onclick = function  () {
+				if (timer==null) {
+					timer=setInterval(changeImg,1000)
+				} else{
+					console.log("已经在切换图片了。")
+				}
+			}
+			stopBtn.onclick = function  () {
+				clearInterval(timer)
+				timer=null
+			}
+			function changeImg () {
+				var randomInt = getRadomInt(1000,1999)
+				document.body.style.background= "url(https://img.infinitynewtab.com/wallpaper/"+randomInt+".jpg) no-repeat"
+				document.body.style.backgroundSize = "100%"
+			}
+			function getRadomInt (min,max) 
+			{ 
+				return Math.floor(Math.random()*(max-min+1)+min) 
+			}
+		</script>
+	</body>
+</html>

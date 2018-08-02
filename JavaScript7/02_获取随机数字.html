@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="ipt" value="" />
+		<button id="btn1">开始</button>
+		<button id="btn2">结束</button>
+		<!--
+			setInterval:可以重复执行某段代码块
+			setInterval(函数，时间间隔)
+			注意：1.时间间隔：毫秒 1000毫秒=1秒
+			     2.函数名不能加括号
+		-->
+		<script type="text/javascript">
+			var oIpt = document.getElementById("ipt")
+			var oBtn1 = document.getElementById("btn1")
+			var oBtn2 = document.getElementById("btn2")
+			//定义一个定时器
+			var timer = null
+			//点击开始，生成一个随机数（m，n）,把随机数放到ipt中
+			oBtn1.onclick = function function_name () {
+				if (timer==null) {
+					timer = setInterval(getValue,100)
+				} else{
+					console.log("定时器已经运行！")
+				}
+				
+			}
+			oBtn2.onclick = function  () {
+				clearInterval(timer)
+				timer = null
+			}
+			function getValue () {
+				var radomInt = getRadomInt(10,30)
+				oIpt.value = radomInt
+			}
+			function getRadomInt (min,max) {
+				return Math.floor(Math.random()*(max-min+1)+min)
+			}
+		</script>
+	</body>
+</html>

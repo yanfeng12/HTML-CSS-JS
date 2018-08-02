@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wrap{
+            text-align: center;
+            width:500px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #ul1{
+            width: 303px;
+            height: 303px;
+            margin: 50px auto;
+            padding:0;
+            border-top:1px solid black;
+            border-left: 1px solid black; 
+        }
+        #ul1 li{
+            float: left;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        #tooltips{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            top: 0;
+            z-index: 999;
+            display: none;
+        }
+        #info{
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            margin: 150px auto;
+        }
+        #info .title{
+            width: 100%;
+            height: 40px;
+            background-color: #009f95;
+            line-height: 40px;
+            color: white;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        #info .btn button{
+            background-color: #009f95;
+            color: white;
+            outline: none;
+            font-size: 10px;
+            width:60px;
+            height: 30px;
+            margin-left: 300px;
+        }
+        #info .content {
+            height: 120px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <button id="btn">开始抽奖</button>
+        <ul id="ul1">
+            <li>鼠标</li>
+            <li>1000万</li>
+            <li>100优惠卷</li>
+            <li>很遗憾</li>
+            <li>键盘</li>
+            <li>iphoneX</li>
+            <li>很遗憾</li>
+            <li>迪拜10日游</li>
+            <li>很遗憾</li>
+        </ul>
+    </div>
+    <!-- 提示信息 -->
+    <div id="tooltips">
+        <div id="info">
+            <div class="title">信息</div>
+            <div class="content" id="content">恭喜你，中奖了</div>
+            <div class="btn">
+                <button id="confirm">确定</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    		//思路： 1 实现红色背景切换  2 当运动停止，弹出对话框--用js去修改tooltips的display 变为block
+    		var oStart = document.getElementById("btn")
+    		var aLi = document.getElementsByTagName("li")
+    		//提示框
+    		var oTooltips = document.getElementById("tooltips")
+    		//确定按钮
+    		var oConfirm = document.getElementById("confirm")
+    		//获取到提示内容的div
+    		var oContent = document.getElementById("content")
+    		//当前li的下标
+    		var nowIndex = 0
+    		// setInterval的id
+    		var timer = null
+    		//设置oTooltips的高度和html文档高度一样，这样才能把所有内容都遮住
+    		oTooltips.style.height = document.documentElement.offsetHeight + "px"
+    		oStart.onclick = function(){
+    			nowIndex =0
+    			//生成一个中奖数字，让randomInt更大一些，nowIndex就会多加几次
+    			//跑到第四圈的时候产生一个随机中奖数字  假设：28
+    			var randomInt = getRandomInt(26, 35) 
+//  			console.log(randomInt)
+    			clearInterval(timer)
+    			//下面的代码只是为了给用户一个感觉：正在抽奖
+    			timer = setInterval(function(){
+    				//9 是aLi的长度
+    				changeColor(aLi, nowIndex % 9)  //28 % 9 = 1
+    				nowIndex++
+    				//randomInt表示中奖的数字，如果nowIndex和randomInt一样，我们就认为当前的li是抽中的奖品
+    				if(nowIndex === randomInt){     
+    					clearInterval(timer)
+    					//停止以后，还应该再往后切换一次
+    					changeColor(aLi, nowIndex % 9)
+    					//在停止的时候，获取到当前抽中的li的内容
+//  					console.log(aLi[randomInt].innerHTML)
+    					if(aLi[randomInt % 9].innerHTML === "很遗憾"){
+    						oContent.innerHTML = "很遗憾没有中奖"
+    					}else{
+    						oContent.innerHTML = "恭喜你,你抽中了" + aLi[randomInt % 9].innerHTML
+    					}
+    					oTooltips.style.display = "block"
+    				}
+    				
+//  				nowIndex = nowIndex % aLi.length  (0-8)
+//				nowIndex %= aLi.length  把这段代码去掉，nowIndex就可以超过8
+    			}, 100)
+    			//思考一个问题：什么时候停止？当中奖的时候停止， 抽中的是谁？
+    			//可以用随机数生成一个具体中奖的数字 randomInt
+    			//需要完善的功能： 1 提示用户到底抽中了什么 2 让背景切换多跑几圈
+    			//
+    		}
+    		//当点击确定的时候，提示框消失
+    		oConfirm.onclick = function(){
+    			//让tooltips消失
+    			oTooltips.style.display = "none"
+    		}
+    		//封装一个切换背景色的函数，aLi nowIndex
+    		function changeColor(aLi, nowIndex){
+    			for(var i = 0; i< aLi.length; i++){
+    				aLi[i].style.backgroundColor = "white"
+    			}
+    			aLi[nowIndex].style.backgroundColor = "red"
+    		}
+    		
+    		function getRandomInt(min, max){
+			return Math.floor(Math.random()*(max - min + 1) + min)
+		}
+    </script>
+</body>
+</html>
