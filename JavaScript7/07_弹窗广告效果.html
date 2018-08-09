@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/cc_kefu.png" style="width: 100%;"/>
+		<!--position: fixed绝对定位，相对于浏览器窗口定位-->
+		<img src="img/footer.png" style="height: 50px; position: fixed; bottom: 0; width: 100%; display: none;" id="img1"/>
+		<script type="text/javascript">
+			var oimg = document.getElementById("img1")
+			setTimeout(function  () {
+				oimg.style.display = "block"
+			},5000)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">发送验证码</button>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn")
+			var time = 10
+			var timer = null
+			oBtn.onclick = function  () {
+				//点击后，要把button设置成不可用
+				this.disabled = true
+				sendCode()
+			}
+			function sendCode () {
+				if (timer==null) {
+					timer = setInterval(function  () {
+					time--
+					if (time>0) {
+						oBtn.innerHTML = time + "s后重新发送"
+					} else{
+						clearInterval(timer)
+						timer = null
+						oBtn.disabled = false
+						time = 10
+						oBtn.innerHTML = "发送验证码"
+					}
+				},1000)
+				} else{
+					console.log("定时器已经在运行")
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>

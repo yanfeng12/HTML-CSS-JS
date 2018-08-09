@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 150px;
+				height: 200px;
+				background-color: #009F95;
+				position: absolute;
+				left: 400px;
+				top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+			oBox.onclick = function  () {
+				waver(oBox,"top",100)
+			}
+		</script>
+	</body>
+</html>

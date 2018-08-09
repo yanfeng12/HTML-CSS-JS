@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				list-style: none;
+				width: 50px;
+				height: 50px;
+				background-color: #009F95;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oLi = document.getElementsByTagName("li")
+			for (var i=0,len=oLi.length;i<len;i++) {
+				oLi[i].style.top = i*60 + "px"
+				oLi[i].onmouseover = function  () {
+					var This = this
+					move(this,10,500,"left",100,function(){
+						move(This,-10,0,"left",100)
+					})
+				}
+			}
+		</script>
+	</body>
+</html>

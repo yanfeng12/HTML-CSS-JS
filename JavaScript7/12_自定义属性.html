@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box" index = "0">
+			
+		</div>
+		<ul>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+			//id是HTML内置的属性
+			alert(oBox.id)
+			//index属于我们自己定义的属性
+			
+			//要求：点击某个li弹出下标
+			var aLi = document.getElementsByTagName("li")
+			for (var i=0,len=aLi.length;i<len;i++) {
+				aLi[i].xiabiao = i
+				aLi[i].onclick = function  () {
+//					alert(i)
+					//i  --- 5
+					alert(this.xiabiao)
+				}
+			}
+			//onclick事件执行函数执行时，for循环已经完成,意味着i已经加为5
+		</script>
+	</body>
+</html>

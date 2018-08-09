@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 150px;
+				height: 200px;
+				background-color: #009F95;
+				position: absolute;
+				left: 400px;
+				top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+			oBox.onclick = function  () {
+				//生成摆动的频率
+				var arr=[];
+				//数组的下标
+				var index = 0
+				for (var i=30;i>=0;i-=3) {
+					//push() 方法可向数组的末尾添加一个或多个元素
+					arr.push(i,-i)
+				}
+				oBox.waver = setInterval(function  () {
+					oBox.style.left = parseInt(getStyle(oBox,"left")) +arr[index]+"px"
+					index++
+					if (index == arr.length) {
+						clearInterval(oBox.waver)
+						oBox.waver = null
+						console.log("摆动停止!")
+					}
+				},100)
+				
+			}
+		</script>
+	</body>
+</html>

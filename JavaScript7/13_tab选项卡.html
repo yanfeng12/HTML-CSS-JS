@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 300px;
+				margin: 50px auto;
+				font-size: 0
+			}
+			
+			#wrap div {
+				width: 300px;
+				height: 150px;
+				border: 1px solid black;
+				display: none;
+				box-sizing: border-box;
+				font-size: 18px;
+			}
+			
+			#wrap div:nth-of-type(1) {
+				display: block
+			}
+			
+			#wrap button {
+				width: 75px;
+				background-color: #009f95;
+				border: none;
+				border-radius: 0;
+				color: white;
+				height: 30px;
+			}
+		
+			#wrap button.active {
+				background-color: orangered
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<!--button表示tab选项-->
+			<button class="active">btn1</button>
+			<button>btn2</button>
+			<button>btn3</button>
+			<button>btn4</button>
+			<!--下面的这些div是具体的显示内容-->
+			<div>11111</div>
+			<div>22222</div>
+			<div>33333</div>
+			<div>44444</div>
+		</div>
+		<script type="text/javascript">
+			//需要实现的功能： 1 鼠标移动到button身上，显示对应的div
+			//实现思路： 默认显示的是第一个div 当鼠标移动到第二个btn身上，需要把1隐藏，把2显示
+			//关键点：btn和div要一对一对应，aBtn[0]  aDiv[0]  aBtn[1] aDiv[1]
+			//移入的btn下标和要显示的div下标一致
+			var aBtn = document.getElementsByTagName("button")
+			//新知识点，限定查找范围，document表示整个html文档
+			var oWrap = document.getElementById("wrap")
+			//表示在oWrap对象下去查找div元素
+			var aDiv = oWrap.getElementsByTagName("div")
+//			console.log(aDiv)
+			//给btn绑定移入事件
+			for(var i=0;i<aBtn.length;i++){
+				//给每个btn加一个自定义的索引（下标）
+				aBtn[i].index = i
+				aBtn[i].onmouseover = function(){
+					//在这里显示对应的div	
+					//要显示的div的下标和鼠标移入的这个btn下标一样
+					//this.index 表示当前移入的btn的下标
+//					alert(this.index)  
+					//把所有的div都隐藏，然后单独显示某一个
+					for(var j=0;j<aDiv.length;j++){
+						aDiv[j].style.display = "none"
+					}
+					aDiv[this.index].style.display = "block"
+					
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -12,3 +12,6 @@ HTML-CSS-JS零基础入门
 
 # 大宗商品交易网站
 [project](https://yanfeng12.github.io/HTML-CSS-JS/project/index.html)
+
+# 随机抽奖
+[随机抽奖](https://yanfeng12.github.io/HTML-CSS-JS/JavaScript7/04_随机抽奖.html)

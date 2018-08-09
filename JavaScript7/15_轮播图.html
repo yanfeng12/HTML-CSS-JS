@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				margin: 50px auto;
+				height: 280px;
+				width: 520px;
+				/*border: 1px solid white;*/
+				position: relative;
+			}
+			#wrap img{
+				display: none;
+			}
+			#wrap img:nth-of-type(1) {
+				display: block
+			}
+			ul {
+				padding: 0;
+				margin: 0;
+				position: absolute;
+				left: 200px;
+				top: 240px;
+				background-color: rgba(255, 255, 255, 0.5);
+				padding: 5px 10px 5px 10px;
+				border-radius: 15px;
+			}
+			
+			li {
+				list-style: none;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: gray;
+				float: left;
+				margin-left: 5px;
+				/*border: 1px solid grey;*/
+			}
+			
+			li:nth-of-type(1) {
+				background-color: red;
+			}
+			
+			#span {
+				width: 100%;
+				position: absolute;
+				top: 140px;
+				color: white;
+			}
+			
+			#left {
+				float: left;
+				display: block;
+				height: 30px;
+				width: 30px;
+				background-color: rgba(6, 6, 6, 0.5);
+				line-height: 30px;
+				text-align: center;
+			}
+			
+			#right {
+				float: right;
+				display: block;
+				height: 30px;
+				width: 30px;
+				background-color: rgba(6, 6, 6, 0.5);
+				line-height: 30px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="img">
+				<img src="img/01.png" />
+				<img src="img/02.jpg"/>
+				<img src="img/03.jpg"/>
+				<img src="img/04.png"/>
+				<img src="img/05.jpg"/>
+			</div>
+			<div id="span">
+				<span id="left">
+					<
+				</span>
+				<span id="right">
+					>
+				</span>
+			</div>
+			<ul>
+				<li id="red"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var timer =null
+			var nowIndex = 0
+			var oImg = document.getElementsByTagName("img")
+			var oLi = document.getElementsByTagName("li")
+			for (var i =0,len=oLi.length;i<len;i++) {
+				oLi[i].index = i
+				oLi[i].onclick = function  () {
+					for (var j=0,len=oImg.length;j<len;j++) {
+						oImg[j].style.display = "none"
+						oLi[j].style.backgroundColor = "gray"
+					}
+					oImg[this.index].style.display = "block"
+					this.style.backgroundColor = "red"
+				}
+			}
+			function autoPlay () {
+				timer = setInterval(function  () {
+					nowIndex++
+					nowIndex %= oImg.length
+					for (var j=0,len = oImg.length;j<len;j++) {
+						oImg[j].style.display = "none"
+						oLi[j].style.backgroundColor = "gray"
+						
+					}
+					oImg[nowIndex].style.display = "block"
+					oLi[nowIndex].style.backgroundColor = "red"
+				},1000)
+			}
+			autoPlay()
+		</script>
+	</body>
+
+</html>

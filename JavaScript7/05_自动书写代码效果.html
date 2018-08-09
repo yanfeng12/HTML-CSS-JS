@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css" id="style-app">
+			/*#style-text {
+				width: 300px;
+				height: 460px;
+				border: 5px solid white;
+				background-color: green;
+				color: white;
+			}
+			
+			#tooltips {
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+				position: absolute;
+				top: 0;
+				z-index: 999;
+				display: none;
+			}
+			
+			#info {
+				width: 400px;
+				height: 200px;
+				background-color: white;
+				margin: 150px auto;
+			}
+			
+			#info .title {
+				width: 100%;
+				height: 40px;
+				background-color: #009f95;
+				line-height: 40px;
+				color: white;
+				padding-left: 20px;
+				box-sizing: border-box;
+			}
+			
+			#info .btn button {
+				background-color: #009f95;
+				color: white;
+				outline: none;
+				font-size: 10px;
+				width: 60px;
+				height: 30px;
+				margin-left: 300px;
+			}
+			
+			#info .content {
+				height: 120px;
+				padding: 20px;
+				box-sizing: border-box;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="style-text">
+
+			</div>
+			<div id="tooltips" style="display:none">
+				<div id="info">
+					<div class="title">信息</div>
+					<div class="content">恭喜你，中奖了</div>
+					<div class="btn">
+						<button id="confirm">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//es6中定义一个很长的字符串 ``
+			var style_text = `
+		    #style-text {
+				width: 300px;
+				height: 460px;
+				border: 5px solid white;
+				background-color: green;
+				color: white;
+			}	
+		    #tooltips{
+		        width: 100%;
+		        height: 100%;
+		        background-color: rgba(0,0,0,0.5);
+		        position: absolute;
+		        top: 0;
+		        z-index: 999;
+		        display: block!important;
+		    }
+		    #info{
+		        width: 400px;
+		        height: 200px;
+		        background-color: white;
+		        margin: 150px auto;
+		    }
+		    #info .title{
+		        width: 100%;
+		        height: 40px;
+		        background-color: #009f95;
+		        line-height: 40px;
+		        color: white;
+		        padding-left: 20px;
+		        box-sizing: border-box;
+		    }
+		    #info .btn button{
+		        background-color: #009f95;
+		        color: white;
+		        outline: none;
+		        font-size: 10px;
+		        width:60px;
+		        height: 30px;
+		        margin-left: 300px;
+		    }
+		    #info .content {
+		        height: 120px;
+		        padding: 20px;
+		        box-sizing: border-box;
+		    }
+    		`
+			
+			var style_app = document.getElementById("style-app")
+			var otext = document.getElementById("style-text") 
+			var n =1
+			setInterval(function function_name () {
+				//substring字符串截取,第一个参数开始位置，第二个参数结束位置
+				style_app.innerHTML = style_text.substring(0,n)
+				otext.innerHTML = style_text.substring(0,n)
+				n++
+			},100)
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="start">开始</button>
+		<button id="stop">结束</button>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var oStart = document.getElementById("start")
+			var oStop = document.getElementById("stop")
+			var oBox = document.getElementById("box")
+			//点击start显示时间在box中
+			var timer = null
+			function getTime () {
+				var date1 = new Date()
+				oBox.innerHTML = date1.toLocaleString()
+				timer = setTimeout(getTime,1000)
+			}
+			oStart.onclick = function  () {
+				getTime()
+			}
+			oStop.onclick = function  () {
+				clearTimeout(timer)
+				timer = null
+			}
+		</script>
+	</body>
+</html>
