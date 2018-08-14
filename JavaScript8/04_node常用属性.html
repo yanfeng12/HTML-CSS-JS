@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap">
+			<div>111</div>
+			<div id="box">111</div>
+			<div>111</div>
+			<div>111</div>
+			<div>111</div>
+			<div>111</div>
+		</div>
+		<script type="text/javascript">
+			//通过方法来获取
+			var owrap = document.getElementById("wrap")
+			//通过属性获取元素
+			//包含text
+			console.log(owrap.childNodes)
+			//不包含
+			console.log(owrap.children)
+			//firstChild第一个节点
+			console.log(owrap.firstChild)
+			console.log(owrap.lastChild)
+			//parentNode父节点
+			console.log(owrap.parentNode)
+			//兄弟节点
+			var oBox = document.getElementById("box")
+			//上一个兄弟节点
+			console.log(oBox.previousSibling)
+			//下一个兄弟节点
+			console.log(oBox.nextSibling)
+		</script>
+	</body>
+</html>

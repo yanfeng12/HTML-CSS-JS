@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 2000px;
+			}
+			#box{
+				width: 300px;
+				height: 200px;
+				background-color: orangered;
+				display: none;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<!--事件的默认行为：事件自带'-->
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+			//鼠标右键事件
+			document.oncontextmenu = function  (ev) {
+				var ev = ev||event
+				oBox.style.display = "block"
+				oBox.style.left = ev.clientX+"px"
+				oBox.style.top = ev.clientY+"px"
+				return false;
+			}
+			//阻止键盘按下滚动条移动行为
+			//方法1：
+//			document.onkeydown = function  () {
+//				return false;
+//			}
+            //方法2
+            document.addEventListener("keydown",function  (ev) {
+            	var ev = ev||event
+            	ev.preventDefault()
+            },false)
+		</script>
+	</body>
+</html>

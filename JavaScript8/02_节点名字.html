@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				border: 1px solid orangered;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<input type="text" id="ipt1" value="" />
+		<button id="btn">添加</button>
+		<ul id="ul1">
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+			console.log(oBox.nodeName)
+			//应用场景
+			var oIpt = document.getElementById("ipt1")
+			var oBtn = document.getElementById("btn")
+			var oUl = document.getElementById("ul1")
+			oBtn.onclick = function  () {
+				//创建一个li
+				var li1 = document.createElement("li")
+				li1.innerHTML = oIpt.value
+				oUl.appendChild(li1)
+			}
+			//点击添加的li，改变背景颜色
+			//事件冒泡
+			oUl.onclick = function  (ev) {
+				var ev = ev || event
+				if (ev.target.nodeName == "LI") {
+					ev.target.style.backgroundColor = "#009F95"
+				}
+			}
+		</script>
+	</body>
+</html>

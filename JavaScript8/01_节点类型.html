@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<!--这是注释-->
+		</div>
+		<ul id="ul1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+			//firstChild第一个节点
+			var oCom = oBox.firstChild
+//			console.log(oBox.nodeType)
+//			console.log(document.nodeType)
+//			console.log(oCom.nodeType)
+//需求：点击document,改变li颜色
+            var oul = document.getElementById("ul1")
+            //通过节点找li,childNodes返回所有的子节点
+            var aNodes = oul.childNodes
+            //文本节点空格和li
+            console.log(aNodes)
+            document.onclick = function  () {
+            	for (var i=0;i<aNodes.length;i++) {
+            		//节点类型应用场景:遍历节点时判断类型，实现过滤
+            		//元素节点1， 文本节点3， 文档节点9， 注释节点8
+            		if (aNodes[i].nodeType == 1) {
+            			aNodes[i].style.backgroundColor = "red"
+            		}
+            	}
+            }
+		</script>
+	</body>
+</html>

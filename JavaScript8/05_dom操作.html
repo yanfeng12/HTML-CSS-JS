@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.btn{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">添加</button>
+		<ul id="ul1">
+			<li id="li1"></li>
+		</ul>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn")
+			var oUl = document.getElementById("ul1")
+			var oLi1 = document.getElementById("li1")
+			var num = 0
+			oBtn.onclick = function  () {
+				num++
+				var oLi = document.createElement("li")
+				oLi.innerHTML = "baidu.com" + num
+				oUl.appendChild(oLi)
+//				oUl.insertBefore(oLi,oLi1)
+			}
+			oUl.onclick = function  (ev) {
+				var ev = ev || event
+				if (ev.target.nodeName == "LI") {
+					oUl.removeChild(ev.target)
+				}
+			}
+			document.onclick = function  () {
+				alert(oBtn.getAttribute("id"))
+				//设置属性setAttribute
+				oBtn.setAttribute("class","btn")
+			}
+		</script>
+	</body>
+</html>

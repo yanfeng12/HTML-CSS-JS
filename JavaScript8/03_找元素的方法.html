@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap">
+			<div></div>
+			<div></div>
+			<div id="box">box</div>
+			<div></div>
+		</div>
+		<script type="text/javascript">
+			var oDiv = document.getElementById("wrap")
+			var aDiv = oDiv.getElementsByTagName("div")
+			console.log(aDiv)
+			//CSS选择器怎么查找，就在querySelectorAll中写
+			var aDiv2 = document.querySelectorAll("#wrap div")
+			console.log(aDiv2)
+			//不要忘记写#
+			var oBox = document.querySelector("#box")
+			console.log(oBox)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="open">打开</button>
+		<button id="close">关闭</button>
+		<script type="text/javascript">
+			var openBtn = document.getElementById("open")
+			var closeBtn = document.getElementById("close")
+			var w = null
+			openBtn.onclick = function  () {
+				//open方法，打开一个窗口.第二个参数表示打开方式。
+				//open("https://www.baidu.com","_self")
+				//返回一个窗口对象
+				w = open("https://www.baidu.com")
+				console.log(w)
+			}
+			closeBtn.onclick = function  () {
+				w.close()
+			}
+		</script>
+	</body>
+</html>

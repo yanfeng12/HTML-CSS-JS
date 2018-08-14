@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 100%;
+				height: 500px;
+				background-color: rgba(0,0,0,0.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			#box{
+				width: 300px;
+				height: 300px;
+				background-color: white;
+				/*固定定位*/
+				position: fixed;
+				top: 100px;
+				left: 100px;
+			}
+			h1{
+				background-color: #009F95;
+				font-size: 16px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<!--需求：点击按钮，弹窗遮挡-->
+		<button id="btn">按钮</button>
+		<div id="wrap">
+			<div id="box">
+				<h1>登陆</h1>
+			</div>
+		</div>
+		<p style="margin-top: 1500px;">这是一个p标签</p>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn")
+			var oWrap = document.getElementById("wrap")
+			var oBox = document.getElementById("box")
+			oBtn.onclick = function  () {
+				oWrap.style.display = "block"
+				var pageH = document.documentElement.scrollHeight
+				oWrap.style.height = pageH + "px"
+				//让登陆box在可视区居中显示
+				var clientW = document.documentElement.clientWidth
+				var clientH = document.documentElement.clientHeight
+				
+//				var boxW = parseInt(getStyle(oBox, "width"))
+                var boxW = oBox.clientWidth
+				console.log(boxW)
+//				var boxH = parseInt(getStyle(oBox, "height"))
+                var boxH = oBox.clientHeight
+                var oBoxTop = (clientH - boxH)/2
+                if (oBoxTop <0 ) {
+                	oBoxTop = 0
+                }
+				oBox.style.top = (clientH - boxH)/2 +"px"
+				oBox.style.left = (clientW - boxW)/2 +"px"
+				
+				
+			}
+			oWrap.onclick = function  () {
+				this.style.display = "none"
+			}
+			window.onresize = function  () {
+				oWrap.style.display = "block"
+				var pageH = document.documentElement.scrollHeight
+				oWrap.style.height = pageH + "px"
+				//让登陆box在可视区居中显示
+				var clientW = document.documentElement.clientWidth
+				var clientH = document.documentElement.clientHeight
+				
+//				var boxW = parseInt(getStyle(oBox, "width"))
+                var boxW = oBox.clientWidth
+				console.log(boxW)
+//				var boxH = parseInt(getStyle(oBox, "height"))
+                var boxH = oBox.clientHeight
+                var oBoxTop = (clientH - boxH)/2
+                if (oBoxTop <0 ) {
+                	oBoxTop = 0
+                }
+				oBox.style.top = (clientH - boxH)/2 +"px"
+				oBox.style.left = (clientW - boxW)/2 +"px"
+			}
+		</script>
+	</body>
+</html>

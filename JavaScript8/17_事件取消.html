@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn1">取消</button>
+		<button id="btn2">点击取消</button>
+		<script type="text/javascript">
+			var oBtn1 = document.getElementById("btn1")
+			var oBtn2 = document.getElementById("btn2")
+			function fn () {
+				alert(1)
+			}
+			function fn2 () {
+				alert("取消点击")
+			}
+//			oBtn1.onclick = function() {
+//				alert(1)
+//			}
+//			oBtn2.onclick = function() {
+//				alert("取消点击")
+//				oBtn1.onclick = null
+//			}
+            addEvent(oBtn1,"click",fn)
+            addEvent(oBtn2,"click",function  () {
+            	removeEveent(oBtn1,"click",fn)
+            })
+            
+			function addEvent (obj,type,fn) {
+				if (obj.addEventListener) {
+					//标准浏览器
+					obj.addEventListener(type,fn,false)
+				} else if(obj.attachEvent){
+					//ie
+					//第一个参数是事件类型，click，没有第三个参数，
+					obj.attachEvent('on'+type,fn)
+				}else{
+					obj['on' + type] = fn
+				}
+			}
+			//事件取消方法
+			function removeEveent(obj, type, fn) {
+				if(obj.removeEventListener) {
+					//标准浏览器
+					obj.removeEventListener(type, fn, false)
+				} else if(obj.detachEvent) {
+					//ie
+					//第一个参数是事件类型，click，没有第三个参数，
+					obj.detachEvent('on' + type, fn)
+				} else {
+					obj['on' + type] = null
+				}
+			}
+		</script>
+	</body>
+</html>

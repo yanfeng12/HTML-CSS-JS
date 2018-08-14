@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 600px;
+				height: 400px;
+				margin: 100px auto;
+				background-color: black;
+				border: 1px solid red;
+			}
+			#box2{
+				width: 400px;
+				height: 200px;
+				background-color: #009F95;
+				margin: 50px auto;
+				border: 1px solid red;
+			}
+			#box3{
+				width: 200px;
+				height: 100px;
+				background-color: orangered;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+				<div id="box3"></div>
+			</div>
+		</div>
+	<script type="text/javascript">
+		var oBox1 = document.getElementById("box1")
+		var oBox2 = document.getElementById("box2")
+		var oBox3 = document.getElementById("box3")
+		function fn () {
+			alert(this.id)
+		}
+		//1.第一种绑定
+//		oBox1.onclick = fn
+		//2.addEventListener
+		//第一个参数是事件名称，第二个参数是事件处理函数，第三个参数是表示是否捕获
+		//默认第三个参数为false表示冒泡，true为捕获
+//		oBox1.addEventListener("click",fn,false)
+//		oBox2.addEventListener("click",fn,false)
+//		oBox3.addEventListener("click",fn,false)
+		
+		oBox1.addEventListener("click",fn,true)
+		oBox2.addEventListener("click",fn,true)
+		oBox3.addEventListener("click",fn,true)
+		
+		//事件冒泡指事件从里向外传播，事件捕获指事件从外向内传播
+	</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1.直接在元素上绑定-->
+		<button id="btn" onclick="fn()"></button>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn")
+			function fn () {
+				alert(this.id)
+			}
+			function fn1 () {
+				alert(this.id)
+			}
+			//2.对象.onclick
+			oBox.onclick = fn
+			//后面这个会把前面的覆盖
+			oBox.onclick = fn1
+			//3.
+			oBox.addEventListener("click",fn,false)
+			oBox.addEventListener("click",fn1,false)
+			//4.addEventListener有兼容性问题
+			//
+			function addEvent (obj,type,fn) {
+				if (obj.addEventListener) {
+					//标准浏览器
+					obj.addEventListener(type,fn,false)
+				} else if(obj.attachEvent){
+					//ie
+					//第一个参数是事件类型，click，没有第三个参数，
+					obj.attachEvent('on'+type,fn)
+				}else{
+					obj['on' + type] = fn
+				}
+			}
+		</script>
+	</body>
+</html>

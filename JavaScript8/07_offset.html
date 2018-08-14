@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 600px;
+				height: 400px;
+				border: 1px solid blue;
+				position: relative;
+				margin: 100px auto;
+				
+			}
+			#box-inner{
+				width: 150px;
+				height: 50px;
+				border: 5px solid red;
+				padding: 10px;
+				background-color: aqua;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box-inner">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+			var oBoxinner = document.getElementById("box-inner")
+			document.onclick = function  () {
+				//offsetLeft，offsetTop盒子的定位偏移量
+				console.log(oBoxinner.offsetLeft)
+				console.log(oBoxinner.offsetTop)
+				//offsetWidth盒子所占的总宽度=border+width+padding
+				console.log(oBoxinner.offsetWidth)
+				console.log(oBoxinner.offsetHeight)
+				//offsetParent定位的父级元素
+				console.log(oBoxinner.offsetParent)
+			}
+		</script>
+	</body>
+</html>
