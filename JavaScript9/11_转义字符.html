@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<!--转义字符：把原来的意思转为别的意思-->	
+	<!--用\来表示转义-->
+		<script type="text/javascript">
+			//1  .表示所有的字符
+			var str1 = "a%c"
+			var reg1 = /a.c/
+			var reg11 = /a\.c/
+			//加上\后表示一个点.
+			console.log(reg1.test(str1))
+			
+			
+			//2.  \b匹配单词边界，只是匹配一个位置,这个位置需要满足的条件
+			//一边是字母、数字、下划线。
+			//另一边是开头位置、结束位置以及非字母、数字、下划线
+			
+			
+			//   /to\b/表示today中,to右边这个位置   to(位置)day  左边是字母，右边也是字母，所以false
+			var str2 = "today"
+			var reg2 = /to\b/
+			console.log(reg2.test(str2))
+			
+			//应用场景
+			var arr = ["box1","box1 box2 box1","box1","box1box2"]
+			//需求:把box1换成box3
+			var regA = /\bbox1\b/g
+			for (var i =0;i<arr.length;i++) {
+//				if (arr[i].indexOf("box1") != -1) {
+//					arr[i] = arr[i].replace("box1","box3")
+//				}
+                if (regA.test(arr[i])) {
+                	arr[i] = arr[i].replace(regA,"box3")
+                }
+			}
+			console.log(arr)
+		</script>
+	</body>
+</html>

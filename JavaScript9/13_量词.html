@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			//   +大于等于1次
+			var str1 = "111"
+			var reg1 = /\d+/
+			console.log(reg1.test(str1))
+			console.log(str1.match(reg1))
+			
+			
+			//* 大于等于0次
+			var str2 = "<div>hello</div>"
+			var reg2 = /<\/*\w+>/g
+			console.log(reg2.test(str2))
+			console.log(str2.match(reg2))
+			
+			//? 0次或者1次
+			var str3 = "aaaa"
+			var reg3 = /a?/
+			console.log(str3.match(reg3))
+			
+			
+			//{}里面给具体数字    {4,7}表示出现4次到7次
+			//{4,}大于4次
+			//{4}等于4次
+			var str4 = "aaaaa012345"
+			var reg4 = /\d{1,4}/
+			console.log(reg4.test(str4))
+			console.log(str4.match(reg4))
+		</script>
+	</body>
+</html>

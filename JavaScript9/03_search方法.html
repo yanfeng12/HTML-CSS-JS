@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "abcde"
+			//需求：判断a是否在str中
+			console.log(str.indexOf("a"))
+			//search，匹配子字符串是否在字符串中。如果匹配上就返回具体的位置，没有匹配上返回-1
+			console.log(str.search("c"))
+			
+			//需求：判断a+数字，这种字符串是否在字符串中
+			//a+数字（大于等于1）
+			//+正则中加号表示重复一次或者多次
+			var reg = /a\d+/
+			var str2 = "adba123dddd"
+			console.log(str2.search(reg))
+			//search和indexOf区别:search可以接受正则表达式
+		</script>
+	</body>
+</html>

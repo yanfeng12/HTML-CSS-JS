@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			test 测试字符串是否符合正则表达式的规则
+//			search 匹配字符串,如果匹配上返回位置,匹配不上返回-1
+//          match  匹配上就返回内容，匹配不上返回null
+            var str = "222ddd33aa11cc"
+            var reg = /\d/g
+            //g表示全局匹配(第一个匹配到会接着继续匹配)
+            //i表示忽略大小写
+            
+            var res = str.match(reg)
+            console.log(res)
+		</script>
+	</body>
+</html>

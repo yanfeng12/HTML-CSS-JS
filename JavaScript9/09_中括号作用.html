@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//abcde true
+			//abdde true
+			//abde false
+			
+			var str = "abde"
+			var reg = /ab[cde]de/
+			console.log(reg.test(str))
+			//1.中括号表示一个整体，并且括号中的字符属于或者关系，只挑选一个进行匹配
+			
+			
+			//2.中括号可以给范围
+			var str2 = "2a"
+			//[0-9] 0 1 2 3 4 5 6 7 8 9
+			
+			var reg2 = /[0-9][a-z]/ 
+			console.log(reg2.test(str2))
+			
+			//3.中括号排除一些  ^表示非
+			var str3 = "%"
+			//[^a-z]除开a-z以外的都能匹配上
+			var reg3 = /[^a-z]/
+			console.log(reg3.test(str3))
+			
+			//总结：
+			//1.[]里面的属于或者关系
+			//2.可以在[]里面写范围,[a-z],[0-9]
+			//3.可以排除一些东西,^
+		</script>
+	</body>
+</html>

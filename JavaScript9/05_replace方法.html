@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str1 = "床前明月光"
+			var str2 = str1.replace("明月","聂风")
+			//str1不会改变
+			console.log(str1,str2)
+			
+			//把数字替换成"x"
+			var str3 = "333ff5fg88fgg"
+			var reg = /\d/g
+			var str4 = str3.replace(reg,"x")
+			console.log(str4)
+			
+			var str5 = "123456"
+			//每个数字加一
+			//replace第二个参数可以是一个函数
+			var str6 = str5.replace(reg,function  (s) {
+				//s:1 2 3 4 5 6
+				return Number(s)+1
+			})
+			console.log(str6)
+		</script>
+	</body>
+</html>

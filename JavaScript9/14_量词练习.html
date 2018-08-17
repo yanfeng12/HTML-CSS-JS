@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--需求：QQ号码验证-->
+		<!--QQ号规则：10000开始，最多11位-->
+		<input type="text" id="ipt" value="" placeholder="请输入QQ号"/>
+		<script type="text/javascript">
+			var oIpt = document.getElementById("ipt")
+			//输入框失去焦点
+			oIpt.onblur = function  () {
+				//aaaaaa1234567
+				//00000000000
+				//0000as0000
+				
+				//新需求：以数字开头，以数字结尾
+				//^表示以...开头
+				//$表示以...结尾
+				var value = oIpt.value
+				var reg = /^[1-9]\d{4,10}$/
+				if (reg.test(value)) {
+					alert("秀")
+				} else{
+					alert("QQ不正确")
+				}
+			}
+		</script>
+	</body>
+</html>

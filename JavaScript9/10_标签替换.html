@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea name="" rows="" cols="" id="text"></textarea>
+		<button id="btn">提交</button>
+		<script type="text/javascript">
+			var oText = document.getElementById("text")
+			var oBtn = document.getElementById("btn")
+			oBtn.onclick = function  () {
+				var value = oText.value
+				//有些字符在正则中有特殊意思，如:/
+				//转义字符：\
+				//量词 *表示零次或者1次
+				var reg = /<\/*[a-zA-Z]+>/g
+				console.log(value.match(reg))
+				oText.value = value.replace(reg,"")
+			}
+		</script>
+	</body>
+</html>

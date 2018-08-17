@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var reg = new RegExp("abc")
+			//简写
+			var reg = /abc/i
+			console.log(reg)
+			console.log(reg.test("aBc"))
+			
+			//判读一个字符串是否含有数字
+//			var str = "hh11111abc"
+//			var reg2 = /\d/
+//			if (reg2.test(str)) {
+//				alert("含有数字")
+//			}else{
+//				alert("没有数字")
+//			}
+			
+			//判断一个字符串是否全是数字
+			//\D表示非数字，只要不是数字的字符都会被\D匹配上
+			var str2 = "123abc"
+			var reg3 = /\D/
+			if (reg3.test(str2)) {
+				//含有非数字
+				alert("不全是数字")
+			} else{
+				//不含有非数字
+				alert("全是数字")
+			}
+		</script>
+	</body>
+</html>

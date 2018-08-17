@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<!--习近平主持中共中央政治局会议 研究2018年经济工作-->
+		<textarea name="" rows="" cols="" id="text1"></textarea>
+		<button id="btn">提交</button>
+		<textarea name="" rows="" cols="" id="text2"></textarea>
+		<script type="text/javascript">
+			var oText1 = document.getElementById("text1")
+			var oText2 = document.getElementById("text2")
+			var oBtn = document.getElementById("btn")
+			//正则表达式中，|表示或者
+			var reg = /习近平|中共|政治局/g
+			oBtn.onclick = function  () {
+				var value1 = oText1.value
+//				var str = ""
+				var value2 = value1.replace(reg,function  (s) {
+					//str必须定义在这里，保证每个s都是从""开始
+					var str = ""
+					for (var i=0;i<s.length;i++) {
+						str += "*"
+						console.log(str)
+					}
+					return str
+				})
+				oText2.value = value2
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

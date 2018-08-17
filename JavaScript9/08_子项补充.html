@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//replace中的子项
+			var str = "2019-12-08"
+			var reg = /(\d+)-/g
+			str.replace(reg, function(s0,s1,s2){
+				//整体正则表达式匹配的结果  2019-  12-
+				//第一个子项：2019 12 
+				//规定写法： 第一个参数输出的内容是 正则整体匹配的结果
+				//从第二个参数起，有多少子项，都可以打出来，参数和子项一一对应
+				console.log(s0,s1,s2)
+//				return Number(s1) - 1
+			})
+			var str2 = "abcd"
+			var reg2 = /(a)(b)(c)(d)/g
+			str2.replace(reg2, function(s0,s1,s2,s3,s4,s5){
+				//子项打完以后再打的第一个参数就是匹配的位置
+				console.log(s0,s1,s2,s3,s4,s5)
+			})
+			//子项（子模式）有什么用？
+//			   1.当正则比较复杂的时候,可以用()来进行分组  
+//			   		\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)* 
+//			   2.当需要使用到整体中部分内容时候,可以用()来分组,并且得到分组中的内容
+		</script>
+	</body>
+</html>

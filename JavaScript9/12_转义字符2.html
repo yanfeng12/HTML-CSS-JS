@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//   \s匹配空格
+			//    \S匹配非空格
+			var str = "   hello"
+			var reg = /\s/
+			console.log(reg.test(str))
+			
+			
+			//\w字母、数字、下划线    \W
+			var str2 = "%"
+			var reg2 = /\w/
+			console.log(reg2.test(str2))
+			
+			
+			//\1  重复第一个子项
+			var str3 = "aa"
+//			var reg3 = /(\w)(\w)/
+			var reg3 = /(\w)\1/
+			console.log(reg3.test(str3))
+			
+		</script>
+	</body>
+</html>
