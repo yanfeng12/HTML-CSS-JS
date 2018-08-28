@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<style type="text/css">
+		#message{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	用户名：<input type="text" id="ipt" value="" />
+	<span id="message">
+		
+	</span>
+	<script type="text/javascript">
+		//当input失去焦点,验证用户名
+		var oIpt = document.getElementById("ipt");
+		var oSpan = document.getElementById("message");
+		//取消焦点 
+		oIpt.onblur = function  (ev) {
+			var xhr = null;
+			//兼容性 
+			
+// 			if (window.XMLHttpRequest) {
+// 				xhr = new XMLHttpRequest();
+// 				
+// 			}else{
+// 				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+// 				
+// 			}
+            //1.打开浏览器
+			try{
+				xhr = new XMLHttpRequest();
+			}catch(e){
+				//TODO handle the exception
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			//2.输入网址  open可以指定发送方式和发送数据的地址以及是否同步
+			//true表示异步方式 
+			xhr.open("get","/getdata?username="+iptValue,true);
+			//3.发送数据
+			xhr.send();
+			//4.监听数据
+			// 状态0: 表示ajax对象创建成功（初始化），但是还没有调用open方法
+			// 状态1:表示已调用send方法，正在发送数据（载入数据）
+			// 状态2:send方法发送完成，已经收到响应内容（载入完成）
+			// 状态3:表示正在解析内容（解析）（注：收到响应内容后，还需要解析内容）
+			// 状态4:响应内容解析完成，可以使用数据了（注：状态为4的时候说明所有流程已经完成，拿到数据了）
+			xhr.onreadystatechange = function  (ev) {
+				if (xhr.readyState === 4 && xhr.state === 200) {
+					// 2000表示http的状态码 200表示响应正确
+					alert(xhr.responseText);
+				}
+			}
+			
+			
+		}
+	</script>
+</body>
+</html>

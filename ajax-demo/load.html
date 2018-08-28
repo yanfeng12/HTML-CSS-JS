@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="text" id="ipt" value="" />
+		密码：<input type="password" id="ipt2" value="" />
+		<input type="button" name="" id="ipt3" value="登陆" />
+		<script type="text/javascript">
+			var oIpt = document.getElementById("ipt");
+			var oIpt2 = document.getElementById("ipt2")
+			var oBtn = document.getElementById("ipt3")
+			oBtn.onclick = function  () {
+				var xhr = null;
+				try{
+					xhr = new XMLHttpRequest();
+				}catch(e){
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+					//TODO handle the exception
+				}
+				xhr.open("post","./login",true);
+				//提交数据的格式 
+				xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+				xhr.send("username="+oIpt.value+"&password="+oIpt2.value);
+				xhr.onreadystatechange = function  () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						console.log(xhr.responseText);
+						//将JSON字符串解析成对象 
+						var obj = JSON.parse(xhr.responseText);
+						if (obj.status === 0) {
+							window.location.href = "https://www.baidu.com";
+							
+						} else{
+							alert(obj.message);
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

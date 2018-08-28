@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+	<script type="text/javascript">
+		try{
+			//尝试执行这里的代码  如果报错，执行catch里面的代码 
+			alert(1)
+		}catch(e){
+			//try里面报的错误在e里面
+			//如果try里面没有错误，catch里面的不执行 
+			alert("err")
+			//TODO handle the exception
+		}finally{
+			//不管try 
+			alert(2)
+		}
+	</script>
+</body>
+</html>

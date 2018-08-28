@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<style type="text/css">
+		#message{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	用户名：<input type="text" id="ipt" value="" />
+	<span id="message">
+		
+	</span>
+	<script type="text/javascript">
+		//当input失去焦点,验证用户名
+		var oIpt = document.getElementById("ipt");
+		var oSpan = document.getElementById("message");
+		//取消焦点 
+		oIpt.onblur = function  (ev) {
+			// console.log("失去焦点");
+			var iptValue = this.value;
+			//没有表单，发送数据到后台
+			 var xhr = new XMLHttpRequest();
+			 xhr.open("get","/getdata?username="+iptValue,true);
+			 xhr.send();
+			 xhr.onreadystatechange = function  (ev2) {
+				 // console.log("状态改变")
+			 	if (xhr.readyState === 4 &&xhr.status === 200) {
+			 		// alert(xhr.responseText);
+					var obj = JSON.parse(xhr.responseText);
+					oSpan.innerHTML = obj.message;
+			 	}
+			 }
+		}
+	</script>
+</body>
+</html>

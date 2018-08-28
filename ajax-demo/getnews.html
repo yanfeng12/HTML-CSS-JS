@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">获取数据</button>
+		<ul id="ul1">
+		</ul>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn");
+			var oUl = document.getElementById("ul1");
+			oBtn.onclick = function  () {
+				var xhr = null;
+				try{
+					xhr = new XMLHttpRequest();
+				}catch(e){
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+					//TODO handle the exception
+				}
+				xhr.open("get","./getNews",true);
+				xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+				xhr.send();
+				xhr.onreadystatechange = function  () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						console.log(xhr.responseText);
+						//将JSON字符串解析成对象 
+						var obj = JSON.parse(xhr.responseText);
+						for(var i=0;i < obj.length; i++){
+							var oLi = document.createElement('li');
+							oLi.innerHTML = obj[i].title;
+							oUl.appendChild(oLi);
+						}
+					}
+				}
+			}	
+		</script>
+	</body>
+
+</html>
